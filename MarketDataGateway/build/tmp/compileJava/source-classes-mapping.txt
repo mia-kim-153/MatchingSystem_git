@@ -1,0 +1,9 @@
+gateway/marketdata/MarketDataGateway.java
+ gateway.marketdata.MarketDataGateway
+gateway/marketdata/MDClientProcessor.java
+ gateway.marketdata.MDClientProcessor
+gateway/marketdata/NativeMarketDataGateway.java
+ gateway.marketdata.NativeMarketDataGateway
+ gateway.marketdata.NativeMarketDataGateway$1
+gateway/marketdata/Client.java
+ gateway.marketdata.Client
