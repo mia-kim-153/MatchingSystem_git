@@ -1,0 +1,28 @@
+task deployLocal {
+    doLast {
+        cleanDirectory()
+        copyFiles()
+    }
+}
+
+def cleanDirectory() {
+    logger.lifecycle("Clean Software directory ...")
+    delete project.softwarePath
+    File software = new File(project.softwarePath)
+    software.mkdirs()
+    delete '/dev/shm/aeron'
+}
+
+def copyFiles() {
+    logger.lifecycle("Copy files to server...")
+    copy {
+        from rootProject.projectDir.absolutePath + '/deploy'
+        into project.softwarePath
+    }
+    File data = new File(project.softwarePath + '/data')
+    data.mkdirs()
+    copy {
+        from rootProject.projectDir.absolutePath + '/data'
+        into project.softwarePath + '/data'
+    }
+}
